@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Details = () => {
+    const allDetails = useLoaderData();
     return (
         <div>
-            <h4>Details</h4>
+            <h4>{allDetails.title}</h4>
         </div>
     );
 };

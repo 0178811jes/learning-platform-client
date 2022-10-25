@@ -4,12 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-
 const Header = () => {
-   
     return (
-
-        <Navbar collapseOnSelect className="mb-5 mt-3" expand="lg" bg="light" variant="light">
+        <div>
+            <h2>THE COURSE OF PYTHON</h2>
+            <div>
+            <Navbar collapseOnSelect className="mb-5 mt-3" expand="lg" bg="light" variant="light">
             <Container>
                 <Navbar.Brand>COURSE</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -38,6 +38,8 @@ const Header = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+            </div>
+        </div>
     );
 };
 

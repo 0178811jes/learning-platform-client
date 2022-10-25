@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import LeftSideNav from '../LeftSide/LeftSideNav';
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
             <div>
             <Navbar collapseOnSelect className="mb-5 mt-3" expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand>COURSE</Navbar.Brand>
+                <Navbar.Brand><Link to='/'>COURSE</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

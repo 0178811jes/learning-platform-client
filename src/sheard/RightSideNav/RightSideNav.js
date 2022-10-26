@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
@@ -24,7 +24,7 @@ const RightSideNav = () => {
     return (
         <ButtonGroup vertical>
             <Button onClick ={handleGoogleSignIn} className="mb-3" variant="outline-primary"> <FaGoogle></FaGoogle> Google Login</Button>
-            <Button variant="outline-dark"> <FaFacebook></FaFacebook> Facebook</Button>
+            <Button variant="outline-dark"> <FaGithub></FaGithub> Github Login</Button>
         </ButtonGroup>
     );
 };

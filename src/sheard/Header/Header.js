@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <div>
-            <h2><FaProductHunt></FaProductHunt>  THE COURSE OF PYTHON</h2>
+            <h2 className="ms-3"><FaProductHunt></FaProductHunt>  THE COURSE OF PYTHON</h2>
             <div>
             <Navbar collapseOnSelect className="mb-5 mt-3" expand="lg" bg="light" variant="light">
             <Container>

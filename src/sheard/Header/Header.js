@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import LeftSideNav from '../LeftSide/LeftSideNav';
 import { FaProductHunt, FaUser } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -46,10 +46,10 @@ const Header = () => {
                     <Nav>
                         <Nav.Link href="#deets">
                         {
-                                user.uid ? 
+                                user?.uid ? 
                                 <>
                                     <span>{user?.displayName}</span>
-                                    <button onClick={handleLogOut}>Logout</button>
+                                    <Button variant="light" onClick={handleLogOut}>Logout</Button>
                                 </>
                                 :
                                 <>
@@ -65,8 +65,8 @@ const Header = () => {
                            
 
                             {
-                                user.photoURL ?
-                                <Image style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
+                                user?.photoURL ?
+                                <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
                                 : <FaUser></FaUser>
                             }
                         </Nav.Link>

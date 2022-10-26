@@ -10,7 +10,15 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = ()=>{
+        logOut()
+        .then( ()=>{})
+        .then( error=> console.error(error) );
+    }
+
+
     return (
         <div>
             <h2><FaProductHunt></FaProductHunt>  THE COURSE OF PYTHON</h2>
@@ -36,8 +44,26 @@ const Header = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+                        <Nav.Link href="#deets">
+                        {
+                                user.uid ? 
+                                <>
+                                    <span>{user?.displayName}</span>
+                                    <button onClick={handleLogOut}>Logout</button>
+                                </>
+                                :
+                                <>
+                                    <Link to='/login'>Login</Link>
+                                    <Link to='/register'>Register</Link>
+                                </>
+                        }
+                        
+                        
+                        
+                        </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
+                           
+
                             {
                                 user.photoURL ?
                                 <Image style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>

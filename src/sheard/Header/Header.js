@@ -25,12 +25,13 @@ const Header = () => {
             <div>
             <Navbar collapseOnSelect className="mb-5 mt-3" expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand><Link to='/'>COURSE</Link></Navbar.Brand>
+                <Navbar.Brand><Link to='/'><FaProductHunt></FaProductHunt>  PYTHON PROMMING COURSES</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#features"><Link to='/faq'>FAQ</Link></Nav.Link>
                         <Nav.Link href="#pricing"><Link to='/blog'>BLOG</Link></Nav.Link>
+                        <Nav.Link href="#pricing"><Link to='/error'>Other pages</Link></Nav.Link>
                        
                     </Nav>
                     <Nav>

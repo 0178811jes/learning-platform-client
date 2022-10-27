@@ -2,6 +2,8 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -37,7 +39,7 @@ const CourseSummary = ({details }) => {
                             <p>{details.details}</p>
                         }
                     </Card.Text>
-                    <Button  variant="primary">Get Premium access</Button>
+                    <Link to='/login'><Button  variant="primary">Get Premium access</Button></Link>
                 </Card.Body>
                 <Card.Footer className="text-muted">{details.total_view}</Card.Footer>
             </Card>

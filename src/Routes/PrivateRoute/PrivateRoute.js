@@ -1,20 +1,18 @@
 import React, { useContext } from 'react';
-import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { AuthConext } from '../../context/AuthProvider';
 
-const PrivateRoute = ({children}) => {
-    const {user, loading} = useContext(AuthContext);
+const PrivetRoute = ({children}) => {
+    const {user, loading}= useContext(AuthConext);
     const location = useLocation();
-
     if(loading){
-        return <Spinner animation="border" variant="primary" />
+        return <progress className="progress w-56"></progress>
     }
-    
-    if(!user){
-        return <Navigate to='/login' state={{from: location}} replace></Navigate>
+
+    if(user){
+        return children;
     }
-    return children;
+    return <Navigate to='/login' state={{from: location}} replace></Navigate>;
 };
 
-export default PrivateRoute;
+export default PrivetRoute;
